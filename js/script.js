@@ -15,9 +15,9 @@ function maxBar(gender, age){
     if(age < 14 && age > 0){
         result = 1300
     } if(age >= 14){
-        if(gender = 'Wanita'){ //<<< ganti icon / string?
+        if(gender === 'Wanita'){ //<<< ganti icon / string?
             result = 2700
-        }else if(gender = 'Pria'){
+        }else if(gender === 'Pria'){
             result = 3700
         }else{return `invalid gender`}
     }
@@ -25,15 +25,12 @@ function maxBar(gender, age){
 }
 //var bar = maxBar(gender, age) //<<< angka bar maksimal
 
-function resetSubmit (){
-  umur = document.getElementById("umur").value;
-  gender = document.getElementById("gender-list").value;
-  nama = document.getElementById('userName').value
-  
-  umur.innerHTML = ''
-  gender.innerHTML = ''
-  nama.innerHTML = ''
-}
+const resetInput = document.getElementById('umur-gender-submit')
+resetInput.addEventListener('click', function(event) {
+  event.preventDefault()
+  document.getElementById('input-data').reset()
+
+})
 
 
 function onSubmit() {
