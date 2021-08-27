@@ -27,20 +27,22 @@
 				<div class="collapse navbar-collapse" id="navbar1">
 					<div class="navbar-nav ml-auto">
 
-            <label for="userName"></label>
-            <input type="text" id="userName" name="userName" class="form-control age mr-2" style="opacity: 0.9;" placeholder="Name" value="">
+            <form id="input-data" class="d-flex">
+              <label for="userName"></label>
+              <input type="text" id="userName" name="userName" class="form-control age mr-2" style="opacity: 0.9;" placeholder="Name" value="">
 
-            <label for="gender"></label>
-            <input list="gender" name="gender" id="gender-list" class="form-control mr-2" style="width: 120px;" placeholder="Gender"/>
-            <datalist id="gender">
-              <option value="Pria">Pria</option>
-              <option value="Wanita">Wanita
-              </option>
-            </datalist>
+              <label for="gender"></label>
+              <!-- <input list="gender" name="gender" id="gender-list" class="form-control mr-2" style="width: 120px;" placeholder="Gender"/> -->
+              <select id="gender-list" class="form-control mr-2" name="gender" style="width: 100px;">
+                <option value="Pria">Pria</option>
+                <option value="Wanita">Wanita
+                </option>
+              </select>
 
-            <label for="umur"></label>
-            <input type="number" name="umur" id="umur" class="form-control mr-2" style="width: 100px;" placeholder="Age"/>
-            <input onclick="onSubmit()" type="submit" id="umur-gender-submit" class="btn btn-primary" />
+              <label for="umur"></label>
+              <input type="number" name="umur" id="umur" class="form-control mr-2" style="width: 90px;" placeholder="Age"/>
+              <input onclick="onSubmit()" type="submit" id="umur-gender-submit" class="btn btn-primary" />
+            </form>
             
 					</div>
 				</div>
