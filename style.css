@@ -1,0 +1,248 @@
+/* ALL VERSION */
+
+/* navbar */
+
+
+h2,h5,.newStat {
+    font-family: 'Viga', sans-serif;
+    font-weight: lighter;
+}
+
+.navbar-brand  {
+    font-family: viga;
+    font-size: 25px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.navbar-brand, .nav-link, button {
+    position: relative;
+    z-index: 1;
+}
+
+.tombol {
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.age {
+    position: relative;
+    z-index: 2;
+}
+
+#navbar1 {
+    position: relative;
+    z-index: 3;
+}
+/* akhir navbar */
+
+/* jumbotron */
+.jumbotron {
+    background-image: url('img/water.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    height: 500px;
+    padding-top: 100px;
+    position: relative;
+}
+
+.jumbotron::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+}
+
+.jumbotron .container {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron .display-4 {
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+
+
+.jumbotron .display-4 span {
+    font-weight: 550;
+}
+/* akhir jumbotron */
+
+/* info-bar */
+.info-bar {
+    background-color: white;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.7);
+    border-radius: 25px;
+    margin-top: -120px;
+    position: relative;
+    z-index: 2;
+    padding: 20px 20px;
+}
+
+.bar {
+    background-color: skyblue;
+    width: 80%;
+    height: 90px;
+    border-radius: 25px;
+}
+
+.nol {
+    margin-top: -30px;
+    margin-left: -20px;
+}
+
+.seratus {
+    margin-top: -30px;
+    margin-right: -30px;
+}
+
+.bar h5 {
+    margin-top: 25px;
+}
+
+/* end info-bar */
+
+
+/* icon-btn */
+.icon-btn {
+    margin-top: 40px;
+}
+
+.icon-btn input[type='number'] {
+    width: 70%;
+    margin-right: 10px;
+}
+
+.icon-btn p {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.icon-btn img {
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
+    border-radius: 20px;
+}
+
+.icon-btn img:active {
+    box-shadow: 1px 1px 10px skyblue;
+}
+
+
+/* akhir icon-btn */
+
+footer h4 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 16px;
+    color: #acacac;
+}
+
+
+
+
+.reset-button {
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 4px;
+    position: relative;
+    background-color: #16a085;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    width: 80%;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #193047;
+    border-radius: 4px;
+  }
+  
+  .reset-button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #1abc9c;
+    color: #000;
+  }
+  
+  .reset-button:after {
+    content: "";
+    background: #1abc9c;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .reset-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+  
+  .reset-button:focus { outline:0; }
+
+/* UTILITIES */
+
+/* DESKTOP VERSION */
+@media (min-width: 992px) {
+    .navbar-brand, .nav-link {
+        color: white !important;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: solid 3px lightskyblue;
+        width: 25px;
+        margin: auto;
+        padding-bottom: 5px;
+        margin-bottom: -8px;
+        
+    }
+
+    .jumbotron {
+        margin-top: -75px;
+    }
+
+    .jumbotron .display-4 {
+        font-size: 62px;
+    }
+
+    .nol {
+        margin-top: -30px;
+    }
+    
+    .seratus {
+        margin-top: -30px;
+    }
+
+    .icon-btn p {
+        text-align: center;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    footer h4 {
+        font-size: 20px;
+    }
+    
+}

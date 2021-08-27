@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+
+		<!-- My CSS -->
+		<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+
+    <title>Hydrite Tracker</title>
+  </head>
+  <body>
+    
+		<!-- navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+        <a class="navbar-brand" href="#"><img src="img/water-drop.png" style="width: 30px; height: 40px;" class="navbar-brand" alt="">Hydrite Tracker</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar1">
+					<div class="navbar-nav ml-auto">
+
+            <label for="userName"></label>
+            <input type="text" id="userName" name="userName" class="form-control age mr-2" style="opacity: 0.9;" placeholder="Tulis Nama" value="">
+
+            <label for="gender"></label>
+            <input list="gender" name="gender" id="gender-list" class="form-control mr-2" style="width: 120px;" placeholder="Gender"/>
+            <datalist id="gender">
+              <option value="Pria">Pria</option>
+              <option value="Wanita">Wanita
+              </option>
+            </datalist>
+
+            <label for="umur"></label>
+            <input type="number" name="umur" id="umur" class="form-control mr-2" style="width: 100px;" placeholder="Umur"/>
+            <input onclick="onSubmit()" type="submit" id="umur-gender-submit" class="btn btn-primary" />
+            
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- akhir navbar -->
+
+		<!-- jumbotron -->
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">Do you <span>hydrated today?</span>
+          let's check if you <span>drink</span> enough water today!</h1>
+				<h2 class="status mt-3" id="status">Your Status: None</h2>
+        <div class="newStat"></div>
+			</div>
+		</div>
+		<!-- akhir jumbotron -->
+
+		<div class="container">
+			<!-- info bar -->
+			<div class="row justify-content-center">
+				<div class="col-10 info-bar">
+					<div class="row">
+						<div class="col-lg-12">
+              <div class="bar" id="bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+      <h5 class="float-left nol">0%</h5>
+      <h5 class="float-right seratus">100%</h5>
+			<!-- akhir info bar -->
+
+			<!-- icon button -->
+			<div class="icon-btn">
+
+				<div class="row" >
+          <div class="col-4 justify-content-center">
+            <img src="img/icon-glass2.png" alt="" class="img-fluid" onclick="updateProgressBar(150)" id="button1">
+            <p>150ml</p>
+          </div>
+          <div class="col-4 justify-content-center">
+            <img src="img/icon-bottle2.png" alt="" class="img-fluid" onclick="updateProgressBar(300)" id="button2">
+            <p>330ml</p>
+          </div>
+          <div class="col-4 justify-content-center">
+            <img src="img/icon-bottle1.png" alt="" class="img-fluid" onclick="updateProgressBar(600)" id="button3">
+            <p>600ml</p>
+          </div>
+				</div>
+
+        <div class="row justify-content-center mt-5">
+          <label for="custom-input"></label>
+          <input type="number" min="0" max="3700" class="form-control" id="custom-input" name='custom-input' placeholder="Custom Mililiter" value="ml">
+          <input type="submit" class="btn btn-info" id="custom-input" onclick="updateProgressBar(document.getElementById('custom-input').value)">
+        </div>
+
+        <div class="row  justify-content-center">
+          <button class="reset-button mt-3">Reset</button>
+        </div>
+
+			</div>
+			<!-- akhir icon button -->
+		
+
+		</div>
+			
+		
+
+		<footer class="mt-5">
+			<div class="row justify-content-center">
+				<div class="col-8">
+					<h4>&copy;Copyright 2021 | Built by Group Four</h4>
+				</div>
+			</div>
+		</footer>
+
+    <script src="js/script.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
