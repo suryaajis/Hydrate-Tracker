@@ -90,8 +90,9 @@ h2,h5,.newStat {
 }
 
 .bar {
-    background-color: skyblue;
-    width: 80%;
+    /* background-color: skyblue; */
+    background:linear-gradient(to bottom, #A3E2EF 35%, #4F9CC0);;
+    width: 0%;
     height: 90px;
     border-radius: 25px;
 }

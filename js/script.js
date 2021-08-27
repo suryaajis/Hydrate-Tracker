@@ -33,6 +33,9 @@ function onSubmit() {
   console.log(bar, nama);
   //console.log(umur, gender);
   selisih = bar;
+  const statues = document.getElementById('status')
+  statues.textContent = `Status: ${nama}, ${umur}, ${gender}`
+
 }
 // console.log(onSubmit())
 
@@ -70,7 +73,9 @@ function getStatus(width){
 function updateProgressBar(value) {
   if(!bar) {
     // console.log("input gender and age first...");
-    return alert('input gender and age first...')
+    const stat = document.getElementById('status')
+    stat.textContent = `Fill input name, gender, and age first`
+    return stat
   }
 
   const progBar = document.getElementById("bar");
@@ -96,7 +101,10 @@ resetBtn.addEventListener('click', function() {
   const progBar = document.getElementById("bar");
   if(!bar) {
     // console.log("input gender and age first...");
-    return alert('input gender and age first...')
+    const stat = document.getElementById('status')
+    stat.textContent = `Fill input name, gender, and age first`
+    stat.style.boxShadow = '1px 1px 10px black;'
+    return stat
   }
 
   progBar.style.width = '0%'

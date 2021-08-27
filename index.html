@@ -13,14 +13,14 @@
 		<link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
 
-    <title>Hydrite Tracker</title>
+    <title>Hydrate Tracker</title>
   </head>
   <body>
     
 		<!-- navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">
-        <a class="navbar-brand" href="#"><img src="img/water-drop.png" style="width: 30px; height: 40px;" class="navbar-brand" alt="">Hydrite Tracker</a>
+        <a class="navbar-brand" href="#"><img src="img/water-drop.png" style="width: 30px; height: 40px;" class="navbar-brand" alt="">Hydrate Tracker</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -28,7 +28,7 @@
 					<div class="navbar-nav ml-auto">
 
             <label for="userName"></label>
-            <input type="text" id="userName" name="userName" class="form-control age mr-2" style="opacity: 0.9;" placeholder="Tulis Nama" value="">
+            <input type="text" id="userName" name="userName" class="form-control age mr-2" style="opacity: 0.9;" placeholder="Name" value="">
 
             <label for="gender"></label>
             <input list="gender" name="gender" id="gender-list" class="form-control mr-2" style="width: 120px;" placeholder="Gender"/>
@@ -39,7 +39,7 @@
             </datalist>
 
             <label for="umur"></label>
-            <input type="number" name="umur" id="umur" class="form-control mr-2" style="width: 100px;" placeholder="Umur"/>
+            <input type="number" name="umur" id="umur" class="form-control mr-2" style="width: 100px;" placeholder="Age"/>
             <input onclick="onSubmit()" type="submit" id="umur-gender-submit" class="btn btn-primary" />
             
 					</div>
@@ -53,7 +53,7 @@
 			<div class="container">
 				<h1 class="display-4">Do you <span>hydrated today?</span>
           let's check if you <span>drink</span> enough water today!</h1>
-				<h2 class="status mt-3" id="status">Your Status: None</h2>
+				<h2 class="status mt-3" id="status">Your Status</h2>
         <div class="newStat"></div>
 			</div>
 		</div>
@@ -70,8 +70,8 @@
 					</div>
 				</div>
 			</div>
-      <h5 class="float-left nol">0%</h5>
-      <h5 class="float-right seratus">100%</h5>
+      <!-- <h5 class="float-left nol">0%</h5>
+      <h5 class="float-right seratus">100%</h5> -->
 			<!-- akhir info bar -->
 
 			<!-- icon button -->
