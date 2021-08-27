@@ -25,6 +25,17 @@ function maxBar(gender, age){
 }
 //var bar = maxBar(gender, age) //<<< angka bar maksimal
 
+function resetSubmit (){
+  umur = document.getElementById("umur").value;
+  gender = document.getElementById("gender-list").value;
+  nama = document.getElementById('userName').value
+  
+  umur.innerHTML = ''
+  gender.innerHTML = ''
+  nama.innerHTML = ''
+}
+
+
 function onSubmit() {
   umur = document.getElementById("umur").value;
   gender = document.getElementById("gender-list").value;
@@ -33,6 +44,10 @@ function onSubmit() {
   console.log(bar, nama);
   //console.log(umur, gender);
   selisih = bar;
+  
+  const statues = document.getElementById('status');
+  statues.textContent = `Your Status: ${nama}, ${umur} Tahun`;
+  
 }
 // console.log(onSubmit())
 
