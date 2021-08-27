@@ -46,7 +46,9 @@ function onSubmit() {
   selisih = bar;
   
   const statues = document.getElementById('status');
-  statues.textContent = `Your Status: ${nama}, ${umur} Tahun`;
+  statues.textContent = `Status: ${nama}, ${umur} Tahun`;
+  
+  resetSubmit();
   
 }
 // console.log(onSubmit())
