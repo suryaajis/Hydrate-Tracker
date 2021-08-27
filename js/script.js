@@ -29,9 +29,12 @@ const resetInput = document.getElementById('umur-gender-submit')
 resetInput.addEventListener('click', function(event) {
   event.preventDefault()
   document.getElementById('input-data').reset()
-
+  
+  let status = document.getElementById('status')
   const progBar = document.getElementById("bar");
+  
   progBar.style.width = '0%'
+  selisih = bar;
   status.innerHTML = `${selisih} ml to go! Drink more ${nama}`
 })
 
