@@ -129,6 +129,8 @@ h2,h5,.newStat {
 .icon-btn p {
     text-align: center;
     font-weight: bold;
+    margin-left: -50px;
+    font-family: 'Viga', sans-serif;
 }
 
 .icon-btn img {
