@@ -17,7 +17,7 @@ function maxBar(gender, age){
     } if(age >= 14){
         if(gender = 'Wanita'){ //<<< ganti icon / string?
             result = 2700
-        }if(gender = 'Pria'){
+        }else if(gender = 'Pria'){
             result = 3700
         }else{return `invalid gender`}
     }
