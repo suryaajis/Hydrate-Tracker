@@ -49,7 +49,7 @@ function onSubmit() {
   selisih = bar;
 
   const statues = document.getElementById('status')
-  statues.textContent = `Status: ${nama}, ${umur}, ${gender}`
+  statues.textContent = `Status: ${nama}, ${gender}, ${umur} Tahun`
 }
 // console.log(onSubmit())
 
