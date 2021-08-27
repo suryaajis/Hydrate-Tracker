@@ -35,7 +35,7 @@ resetInput.addEventListener('click', function(event) {
   
   progBar.style.width = '0%'
   selisih = bar;
-  status.innerHTML = `${selisih} ml to go! Drink more ${nama}`
+//   status.innerHTML = `${selisih} ml to go! Drink more ${nama}`
 })
 
 
