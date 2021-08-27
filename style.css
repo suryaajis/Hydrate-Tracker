@@ -128,14 +128,14 @@ h2,h5,.newStat {
 
 .icon-btn p {
     text-align: center;
-    margin-top: -30px;
-    margin-bottom: 10px;
     font-weight: bold;
 }
 
 .icon-btn img {
     box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
     border-radius: 20px;
+    width: 300px;
+    padding: 20px 0 50px;
 }
 
 .icon-btn img:active {
