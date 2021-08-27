@@ -30,6 +30,9 @@ resetInput.addEventListener('click', function(event) {
   event.preventDefault()
   document.getElementById('input-data').reset()
 
+  const progBar = document.getElementById("bar");
+  progBar.style.width = '0%'
+  status.innerHTML = `${selisih} ml to go! Drink more ${nama}`
 })
 
 
