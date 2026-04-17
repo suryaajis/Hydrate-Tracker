@@ -1,128 +1,217 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
-
-		<!-- My CSS -->
-		<link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Hydrate Tracker</title>
   </head>
   <body>
-    
-		<!-- navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<div class="container">
-        <a class="navbar-brand" href="#"><img src="img/water-drop.png" style="width: 30px; height: 40px;" class="navbar-brand" alt="">Hydrate Tracker</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbar1">
-					<div class="navbar-nav ml-auto">
 
-            <form id="input-data" class="d-flex">
-              <label for="userName"></label>
-              <input type="text" id="userName" name="userName" class="form-control age mr-2" style="opacity: 0.9;" placeholder="Name" value="">
-
-              <label for="gender"></label>
-              <!-- <input list="gender" name="gender" id="gender-list" class="form-control mr-2" style="width: 120px;" placeholder="Gender"/> -->
-              <select id="gender-list" class="form-control mr-2" name="gender" style="width: 100px;">
-                <option value="Pria">Pria</option>
-                <option value="Wanita">Wanita
-                </option>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/water-drop.png" alt="drop" class="brand-icon">
+          Hydrate Tracker
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"
+          aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <div class="navbar-nav ml-auto">
+            <form id="input-data" class="nav-form">
+              <input type="text" id="userName" class="form-input" placeholder="Your name" autocomplete="off">
+              <select id="gender-list" class="form-input">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
               </select>
-
-              <label for="umur"></label>
-              <input type="number" name="umur" id="umur" class="form-control mr-2" style="width: 90px;" placeholder="Age"/>
-              <input onclick="onSubmit()" type="submit" id="umur-gender-submit" class="btn btn-info" />
+              <input type="number" id="umur" class="form-input age-input" placeholder="Age" min="1" max="120">
+              <button type="button" id="umur-gender-submit" class="btn-start" onclick="onSubmit()">Start</button>
             </form>
-            
-					</div>
-				</div>
-			</div>
-		</nav>
-		<!-- akhir navbar -->
-
-		<!-- jumbotron -->
-		<div class="jumbotron jumbotron-fluid">
-			<div class="container">
-				<h1 class="display-4">Do you <span>hydrated today?</span>
-          let's check if you <span>drink</span> enough water today!</h1>
-				<h2 class="status mt-3" id="status">Your Status</h2>
-        <div class="newStat"></div>
-			</div>
-		</div>
-		<!-- akhir jumbotron -->
-
-		<div class="container">
-			<!-- info bar -->
-			<div class="row justify-content-center">
-				<div class="col-10 info-bar">
-					<div class="row">
-						<div class="col-lg-12">
-              <div class="bar" id="bar"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-      <!-- <h5 class="float-left nol">0%</h5>
-      <h5 class="float-right seratus">100%</h5> -->
-			<!-- akhir info bar -->
-
-			<!-- icon button -->
-			<div class="icon-btn">
-
-				<div class="row" >
-          <div class="col-4 justify-content-center">
-            <img src="img/glass-water.png" alt="" class="img-fluid" onclick="updateProgressBar(150)" id="button1">
-            <p>150ml</p>
           </div>
-          <div class="col-4 justify-content-center">
-            <img src="img/water-bottle.png" alt="" class="img-fluid" onclick="updateProgressBar(300)" id="button2">
-            <p>300ml</p>
-          </div>
-          <div class="col-4 justify-content-center">
-            <img src="img/big-bottle.png" alt="" class="img-fluid" onclick="updateProgressBar(600)" id="button3">
-            <p>600ml</p>
-          </div>
-				</div>
+        </div>
+      </div>
+    </nav>
 
-        <div class="row justify-content-center mt-5">
-          <label for="custom-input"></label>
-          <input type="number" min="0" max="3700" class="form-control" id="custom-input" name='custom-input' placeholder="Custom Mililiter" value="ml">
-          <input type="submit" class="btn btn-info" id="custom-input" onclick="updateProgressBar(document.getElementById('custom-input').value)">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">Stay <span>Hydrated</span>, Stay Healthy</h1>
+        <p class="hero-sub">Track your daily water intake and reach your hydration goal.</p>
+        <div class="hero-status" id="status">Enter your details above to begin</div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="container main-container">
+
+      <!-- Stats Cards -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon">💧</div>
+          <div class="stat-value" id="stat-consumed">0 ml</div>
+          <div class="stat-label">Consumed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-value" id="stat-goal">— ml</div>
+          <div class="stat-label">Daily Goal</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-value" id="stat-remaining">— ml</div>
+          <div class="stat-label">Remaining</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-value" id="stat-percent">0%</div>
+          <div class="stat-label">Progress</div>
+        </div>
+      </div>
+
+      <!-- Progress Bar Card -->
+      <div class="card-section">
+        <div class="progress-label">
+          <span>Hydration Progress</span>
+          <span id="progress-pct-label">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="bar"></div>
+          <div class="progress-bubbles">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="hydration-level" id="hydration-level">
+          <span class="level-dot"></span>
+          <span id="level-text">Not started</span>
+        </div>
+      </div>
+
+      <!-- Add Water Section -->
+      <div class="card-section">
+        <h3 class="section-title">Add Water Intake</h3>
+
+        <!-- Drink Type -->
+        <div class="drink-type-row">
+          <label class="section-sub">Drink type:</label>
+          <div class="drink-types">
+            <button class="drink-type-btn active" data-type="water" data-factor="1.0" onclick="selectDrinkType(this)">
+              💧 Water <span class="factor-badge">100%</span>
+            </button>
+            <button class="drink-type-btn" data-type="tea" data-factor="0.9" onclick="selectDrinkType(this)">
+              🍵 Tea <span class="factor-badge">90%</span>
+            </button>
+            <button class="drink-type-btn" data-type="juice" data-factor="0.85" onclick="selectDrinkType(this)">
+              🍊 Juice <span class="factor-badge">85%</span>
+            </button>
+            <button class="drink-type-btn" data-type="coffee" data-factor="0.8" onclick="selectDrinkType(this)">
+              ☕ Coffee <span class="factor-badge">80%</span>
+            </button>
+            <button class="drink-type-btn" data-type="milk" data-factor="0.9" onclick="selectDrinkType(this)">
+              🥛 Milk <span class="factor-badge">90%</span>
+            </button>
+          </div>
         </div>
 
-        <div class="row  justify-content-center">
-          <button class="reset-button mt-3">Reset</button>
+        <!-- Quick-add Buttons -->
+        <div class="quick-add-row">
+          <button class="quick-btn" onclick="updateProgressBar(150)">
+            <img src="img/glass-water.png" alt="glass" class="quick-img">
+            <span>150 ml</span>
+          </button>
+          <button class="quick-btn" onclick="updateProgressBar(300)">
+            <img src="img/water-bottle.png" alt="bottle" class="quick-img">
+            <span>300 ml</span>
+          </button>
+          <button class="quick-btn" onclick="updateProgressBar(600)">
+            <img src="img/big-bottle.png" alt="big bottle" class="quick-img">
+            <span>600 ml</span>
+          </button>
         </div>
 
-			</div>
-			<!-- akhir icon button -->
-		
+        <!-- Custom input -->
+        <div class="custom-add-row">
+          <input type="number" min="1" max="5000" class="form-input custom-ml" id="custom-input" placeholder="Custom amount (ml)">
+          <button class="btn-add" onclick="addCustom()">+ Add</button>
+          <button class="btn-reset" onclick="resetProgress()">Reset</button>
+        </div>
+      </div>
 
-		</div>
-			
-		
+      <!-- Hydration Log -->
+      <div class="card-section">
+        <div class="log-header">
+          <h3 class="section-title">Today's Log</h3>
+          <button class="btn-clear-log" onclick="clearLog()">Clear</button>
+        </div>
+        <div id="hydration-log">
+          <p class="log-empty">No entries yet. Start tracking above!</p>
+        </div>
+      </div>
 
-		<footer class="mt-5">
-			<div class="row justify-content-center">
-				<div class="col-8">
-					<h4>&copy;Copyright 2021 | Built by Group Four</h4>
-				</div>
-			</div>
-		</footer>
+      <!-- Tips Section -->
+      <div class="card-section tips-card">
+        <h3 class="section-title">💡 Hydration Tips</h3>
+        <div class="tips-grid" id="tips-grid">
+          <div class="tip-item">
+            <div class="tip-icon">🌅</div>
+            <div>
+              <strong>Morning Kickstart</strong>
+              <p>Drink a glass of water right after waking up to rehydrate after sleep.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">🍽️</div>
+            <div>
+              <strong>Before Meals</strong>
+              <p>Drink 1–2 glasses before each meal to aid digestion and control appetite.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">🏃</div>
+            <div>
+              <strong>After Exercise</strong>
+              <p>Replenish fluids after physical activity — aim for 400–600 ml extra.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">📱</div>
+            <div>
+              <strong>Set Reminders</strong>
+              <p>Use phone reminders every 2 hours to stay consistent throughout the day.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">☀️</div>
+            <div>
+              <strong>Hot Weather</strong>
+              <p>In hot or humid conditions, increase your intake by up to 500 ml per day.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon">🫧</div>
+            <div>
+              <strong>Urine Color Check</strong>
+              <p>Pale yellow urine means you're well-hydrated. Dark yellow means drink more.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Hydrate Tracker &mdash; Stay hydrated, stay healthy.</p>
+      </div>
+    </footer>
 
     <script src="js/script.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
